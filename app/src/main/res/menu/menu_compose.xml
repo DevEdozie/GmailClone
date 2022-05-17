@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <group>
+        <item
+            android:id="@+id/add_from_contacts"
+            android:title="Add from Contacts"/>
+        <item
+            android:id="@+id/save_draft"
+            android:title="Save draft"/>
+        <item
+            android:id="@+id/discard"
+            android:title="Discard"/>
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/help_feedback"
+            android:title="Help &amp; Feedback"/>
+    </group>
+
+    <item
+        android:id="@+id/send_message"
+        android:title="Send Message"
+        android:icon="@drawable/send_icon"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/attach_file"
+        android:title="Attach File"
+        android:icon="@drawable/attach_file_button"
+        app:showAsAction="always"/>
+
+
+
+
+
+</menu>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">BuilderPattern</string>
+    <string name="openDrawer">Navigation Drawer Opening</string>
+    <string name="closeDrawer">Navigation Drawer Closing</string>
+    <string name="feature">Feature</string>
+    <string name="details">Details</string>
+
+
+    <string-array name="emails">
+        <item>hellovector01@gmail.com</item>
+        <item>hellovector02@gmail.com</item>
+        <item>hellovector03@gmail.com</item>
+        <item>hellovector04@gmail.com</item>
+        <item>hellovector05@gmail.com</item>
+        <item>hellovector06@gmail.com</item>
+        <item>hellovector07@gmail.com</item>
+    </string-array>
+
+    <string-array name="message_title">
+        <item>Vector 1</item>
+        <item>Vector 2</item>
+        <item>Vector 3</item>
+        <item>Vector 4</item>
+        <item>Vector 5</item>
+        <item>Vector 6</item>
+        <item>Vector 7</item>
+        <item>Vector 8</item>
+        <item>Vector 9</item>
+        <item>Vector 10</item>
+    </string-array>
+
+    <string-array name="message_text">
+        <item> Hello,I am Vector 1</item>
+        <item> Hello,I am Vector 2</item>
+        <item> Hello,I am Vector 3</item>
+        <item> Hello,I am Vector 4</item>
+        <item> Hello,I am Vector 5</item>
+        <item> Hello,I am Vector 6</item>
+        <item> Hello,I am Vector 7</item>
+        <item> Hello,I am Vector 8</item>
+        <item> Hello,I am Vector 9</item>
+        <item> Hello,I am Vector 10</item>
+    </string-array>
+
+    <string-array name="dates">
+        <item>Mar 1</item>
+        <item>Mar 2</item>
+        <item>Mar 3</item>
+        <item>Mar 4</item>
+        <item>Mar 5</item>
+        <item>Mar 6</item>
+        <item>Mar 7</item>
+        <item>Mar 8</item>
+        <item>Mar 9</item>
+        <item>Mar 10</item>
+    </string-array>
+</resources>

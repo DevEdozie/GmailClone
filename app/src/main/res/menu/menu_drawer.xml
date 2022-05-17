@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:title="All inboxes"
+            android:id="@+id/all_inbox"
+            android:icon="@drawable/all_inboxes"/>
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/primary"
+            android:icon="@drawable/primary"
+            android:title="Primary" />
+        <item
+            android:id="@+id/social"
+            android:icon="@drawable/social"
+            android:title="Social" />
+        <item
+            android:id="@+id/promotions"
+            android:icon="@drawable/promotions"
+            android:title="Promotions" />
+    </group>
+
+    <item android:title="All Labels">
+        <menu>
+            <item
+                android:id="@+id/starred"
+                android:icon="@drawable/starred"
+                android:title="Starred" />
+            <item
+                android:id="@+id/important"
+                android:icon="@drawable/important"
+                android:title="Important" />
+            <item
+                android:id="@+id/sent"
+                android:icon="@drawable/sent"
+                android:title="Sent" />
+            <item
+                android:id="@+id/outbox"
+                android:icon="@drawable/outbox"
+                android:title="Outbox" />
+            <item
+                android:id="@+id/drafts"
+                android:icon="@drawable/drafts"
+                android:title="Drafts" />
+            <item
+                android:id="@+id/all_mail"
+                android:icon="@drawable/all_mail"
+                android:title="All mail" />
+            <item
+                android:id="@+id/spam"
+                android:icon="@drawable/spam"
+                android:title="Spam" />
+            <item
+                android:id="@+id/trash"
+                android:icon="@drawable/trash"
+                android:title="Trash" />
+        </menu>
+    </item>
+
+    <item android:title="Google apps">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/calendar"
+                    android:icon="@drawable/calender"
+                    android:title="Calendar" />
+                <item
+                    android:id="@+id/contacts"
+                    android:icon="@drawable/contacts"
+                    android:title="Contacts" />
+            </group>
+
+            <group>
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/settings"
+                    android:title="Settings" />
+                <item
+                    android:id="@+id/help_feedback"
+                    android:icon="@drawable/help_feedback"
+                    android:title=" Help &amp; Feedback" />
+            </group>
+        </menu>
+    </item>
+
+
+</menu>
