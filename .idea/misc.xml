@@ -10,13 +10,15 @@
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/drawable/vector_1.xml" value="0.33" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/drawable/vector_6.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/drawable/vector_8.xml" value="0.171875" />
-        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/activity_content.xml" value="0.2" />
+        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/activity_content.xml" value="0.1" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/activity_message.xml" value="0.156640625" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/card_content.xml" value="0.22" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/compose_toolbar.xml" value="0.159765625" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/content.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/header.xml" value="0.33" />
+        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/header.xml" value="0.10425531914893617" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/header_2.xml" value="0.25" />
+        <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/main_toolbar.xml" value="0.1" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/recycler_view_row.xml" value="0.22" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/recycler_view_row_2.xml" value="0.159765625" />
         <entry key="..\:/Users/AC/AndroidStudioProjects/BuilderPattern/app/src/main/res/layout/spinner_layout.xml" value="0.159765625" />

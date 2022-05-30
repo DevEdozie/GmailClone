@@ -1,4 +1,4 @@
-package com.hfad.builderpattern;
+package com.hfad.builderpattern.TutorialClasses;
 
 public class SandwichBuilder {
 

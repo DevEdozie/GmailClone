@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:label="Compose"
-            android:name=".ContentActivity"
+            android:name="GmailClone.MessageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TutorialClasses.ContentActivity"
             android:exported="true"
-            android:parentActivityName="GmailClone.MainActivity"/>
+            android:label="Compose"
+            android:parentActivityName="GmailClone.MainActivity" />
         <activity
             android:name="GmailClone.MainActivity"
             android:exported="true">

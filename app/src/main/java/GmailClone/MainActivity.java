@@ -23,23 +23,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.hfad.builderpattern.ContentActivity;
+import com.hfad.builderpattern.TutorialClasses.ContentActivity;
 import com.hfad.builderpattern.R;
+import com.hfad.builderpattern.databinding.ActivityMainBinding;
+import com.hfad.builderpattern.databinding.HeaderBinding;
+import com.hfad.builderpattern.databinding.MainToolbarBinding;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private Toolbar toolbar;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private static final String DEBUG_TAG = "tag";
-    private Toast toast;
+    //private Toolbar toolbar;
+    //private DrawerLayout drawerLayout;
+    //private NavigationView navigationView;
+    //private static final String DEBUG_TAG = "tag";
+    //private Toast toast;
     GMC_RecyclerViewAdapter adapter;
-    RecyclerView recyclerView;
+    //RecyclerView recyclerView;
+    /*
+    May 28, 2022
+    Implemented view binding in this project
+     */
+    ActivityMainBinding binding;
+    HeaderBinding headerBinding;
+    //MainToolbarBinding toolbarBinding;
     //
-    Spinner spinner;
-    TextView name;
+    //Spinner spinner;
+    //TextView name;
 
 
     ArrayList<GmailCloneModel> gmailCloneModels = new ArrayList<>();
@@ -53,19 +63,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //view binding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        //header binding
+        /*
+        Binding header to navigation view
+         */
+        headerBinding = HeaderBinding.bind(binding.navigationView.getHeaderView(0));
+
+        //toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(binding.toolbar);
         //navigation
         setNavigationDrawer();
-        recyclerView = findViewById(R.id.recycler_view);
+        //recyclerView = findViewById(R.id.recycler_view);
         setUpGmailCloneModels();
         adapter = new GMC_RecyclerViewAdapter(this, gmailCloneModels);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerView.setHasFixedSize(true);
         //add ItemDecoration
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, R.drawable.divider));
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(this, R.drawable.divider));
         //ItemTouchHelper
         initItemTouchHelper();
         //fab
@@ -75,9 +93,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void setNavigationDrawer(){
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        //drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        //inflate navigation header
+        binding.navigationView.getHeaderView(0);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-                drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
+                binding.drawer, binding.toolbar, R.string.openDrawer, R.string.closeDrawer) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -88,78 +108,62 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 super.onDrawerClosed(drawerView);
             }
         };
-        drawerLayout.setDrawerListener(toggle);
+        binding.drawer.setDrawerListener(toggle);
         toggle.syncState();
         //instantiate navigationView
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        //navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        binding.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                drawerLayout.closeDrawers();
+                binding.drawer.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.all_inbox:
-                        toast = Toast.makeText(MainActivity.this, "All inboxes clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "All inboxes clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.primary:
-                        toast = Toast.makeText(MainActivity.this, "Primary clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Primary clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.social:
-                        toast = Toast.makeText(MainActivity.this, "Social Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Social Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.promotions:
-                        toast = Toast.makeText(MainActivity.this, "Promotions Clicked Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Promotions Clicked Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.starred:
-                        toast = Toast.makeText(MainActivity.this, "Starred Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Starred Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.important:
-                        toast = Toast.makeText(MainActivity.this, "Important Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Important Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.sent:
-                        toast = Toast.makeText(MainActivity.this, "Sent Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Sent Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.outbox:
-                        toast = Toast.makeText(MainActivity.this, "Outbox Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Outbox Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.drafts:
-                        toast = Toast.makeText(MainActivity.this, "Drafts Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Drafts Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.all_mail:
-                        toast = Toast.makeText(MainActivity.this, "All mail Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "All mail Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.spam:
-                        toast = Toast.makeText(MainActivity.this, "Spam Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                       Toast.makeText(MainActivity.this, "Spam Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.trash:
-                        toast = Toast.makeText(MainActivity.this, "Trash Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Trash Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.calendar:
-                        toast = Toast.makeText(MainActivity.this, "Calendar Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Calendar Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.contacts:
-                        toast = Toast.makeText(MainActivity.this, "Contacts Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                       Toast.makeText(MainActivity.this, "Contacts Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.settings:
-                        toast = Toast.makeText(MainActivity.this, "Settings Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Settings Clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.help_feedback:
-                        toast = Toast.makeText(MainActivity.this, "Help & Feedback Clicked", Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, "Help & Feedback Clicked", Toast.LENGTH_SHORT).show();
                         break;
 
                 }
@@ -199,8 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Handle item selection
         switch (item.getItemId()) {
             case R.id.search_icon:
-                toast = Toast.makeText(this, "Search Button Clicked", Toast.LENGTH_SHORT);
-                toast.show();
+               Toast.makeText(this, "Search Button Clicked", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -224,13 +227,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView);
     }
 
 
     public void setFab() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ContentActivity.class);
@@ -242,24 +245,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void setSpinner() {
 
-        spinner = (Spinner) findViewById(R.id.spinner);
+        //spinner = (Spinner) findViewById(R.id.spinner);
         //Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(MainActivity.this, R.array.emails, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        headerBinding.spinner.setAdapter(adapter);
         //specify the interface implementation
-        spinner.setOnItemSelectedListener(MainActivity.this);
+        headerBinding.spinner.setOnItemSelectedListener(MainActivity.this);
 
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-        name = (TextView) findViewById(R.id.user_name);
+        //name = (TextView) findViewById(R.id.user_name);
         String spinnerItems[] = getResources().getStringArray(R.array.message_title);
         String value = spinnerItems[position];
-        name.setText(value);
+        headerBinding.userName.setText(value);
     }
 
     @Override

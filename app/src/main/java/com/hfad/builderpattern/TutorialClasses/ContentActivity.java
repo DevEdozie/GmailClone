@@ -1,4 +1,4 @@
-package com.hfad.builderpattern;
+package com.hfad.builderpattern.TutorialClasses;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,17 +12,22 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.hfad.builderpattern.R;
+import com.hfad.builderpattern.databinding.ActivityContentBinding;
+
 public class ContentActivity extends AppCompatActivity {
 
 
-    Toolbar toolbar;
+    //Toolbar toolbar;
+    ActivityContentBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_content);
-        toolbar = (Toolbar) findViewById(R.id.toolbar_compose);
-        setSupportActionBar(toolbar);
+        binding = ActivityContentBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        //toolbar = (Toolbar) findViewById(R.id.toolbar_compose);
+        setSupportActionBar(binding.toolbarCompose);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
     }

@@ -1,6 +1,7 @@
 package GmailClone;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.hfad.builderpattern.R;
 
 import java.util.ArrayList;
@@ -63,6 +65,19 @@ public class GMC_RecyclerViewAdapter extends RecyclerView.Adapter<GMC_RecyclerVi
             tvMessageText = itemView.findViewById(R.id.text_textview);
             tvMessageTitle = itemView.findViewById(R.id.title_textview);
             tvDate = itemView.findViewById(R.id.date_textview);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    int position = getAdapterPosition();
+                    //Open a new activity
+
+                    //Snackbar.make(v,"Click detected on item " + (position + 1),
+                            //Snackbar.LENGTH_LONG).setAction("Action",null).show();
+
+                }
+            });
         }
     }
 
